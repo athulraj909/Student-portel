@@ -1,0 +1,20 @@
+{% load static %}
+{% block content %}
+{% include 'header.html' %}
+<html>
+    <head>
+        <title></title>
+    </head>
+    <body>
+        <form id="contact" action="login" method="POST">
+            {% csrf_token %}
+        <div>
+            <h1 style="margin-left: 600px;">Registration form</h1>
+            <input type="email" name="email" id="email" pattern="[^ @]*@[^ @]*" placeholder="Email" required="" style="margin-left: 630px;"><br> <br> 
+            <input type="password" name="password" id="password"  placeholder="Password" required="" style="margin-left: 630px;"><br> <br>
+            <button type="submit" id="form-submit"  style="margin-left: 630px;">Register</button>
+        </div>
+    </form>
+    </body>
+</html>
+{% endblock %}

@@ -1,0 +1,21 @@
+{% load static %}
+{% block content %}
+{% include 'header.html' %}
+<html>
+    <head>
+        <title></title>
+    </head>
+    <body>
+        <form id="contact" action="" method="POST"></form>
+        <div>
+            <h1 style="margin-left: 600px;">student details</h1><br>
+            <h2 style="margin-left: 600px;">Name : {{result.firstname}}{{result.lastname}}</h2>
+            <h2 style="margin-left: 600px;">Emailid : {{result.email}}</h2>
+            <h2 style="margin-left: 600px;">Phone : {{result.phone}}</h2>
+            <h2 style="margin-left: 600px;">Adress1 : {{result.address1}}</h2>
+            <h2 style="margin-left: 600px;">Adress2 : {{result.address2}}</h2>
+        </div>
+    </form>
+    </body>
+</html>
+{% endblock %}

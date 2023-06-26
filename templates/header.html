@@ -1,0 +1,44 @@
+{% load static %}
+{% block content %}
+<html>
+    <head>
+        <title>
+            Student portal 
+        </title>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
+    </head>
+    <body>
+
+        <nav class="navbar navbar-expand-lg " style="background-color:#05759e;">
+            <div class="container-fluid">
+              <a class="navbar-brand" href="#" style="font-weight: bold;color: white;">STUDENT PORTEL</a>
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="white" class="bi bi-pencil-square" viewBox="0 0 16 16" style="margin-right:1050px;">
+                <path d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z"/>
+                <path fill-rule="evenodd" d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5v11z"/>
+              </svg>
+                <form class="d-flex" role="search">
+
+                {% if request.session.admin %}
+                <li class="nav-item" style="margin-right: 20px;">
+                    <a class="nav-link active" aria-current="page" href="studentregistraion" style="color: white;margin-bottom: 10px;">STUDENT page</a>
+                  </li>
+                  <button class="btn btn-danger" type="submit"  style="height: 40px; width: 90px;margin-top: 10px;border-radius: 5px;"><a href="logout">LOGOut</a></button>
+                {% elif request.session.uid %}
+                <li class="nav-item" style="margin-right: 20px;">
+                    <a class="nav-link active" aria-current="page" href="studentdetails" style="color: white;margin-bottom: 10px;">STUDENT DETAILS</a>
+                  </li>
+                  <button class="btn btn-danger" type="submit"  style="height: 40px; width: 90px;margin-top: 10px;border-radius: 5px;"><a href="logout">LOGOUT</a></button>
+                {% else %}
+                  <li class="nav-item" style="margin-right: 20px;">
+                    <a class="nav-link active" aria-current="page" href="studentregistraion" style="color: white;margin-bottom: 10px;">STUDENT REGISTER</a>
+                  </li>
+                  <button class="btn btn-danger" type="submit"  style="height: 40px; width: 90px;margin-top: 10px;border-radius: 5px;"><a href="login">LOGIN</a></button>
+                {% endif %}
+                </form>
+              </div>
+            </div>
+          </nav>
+
+{% endblock %}
